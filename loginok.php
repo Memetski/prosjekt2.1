@@ -11,9 +11,9 @@ if ($row=$sth->fetch()) {?>
 	<input type="button" value="Logg ut" onclick="javascript:loggut();"/>
 	<input type="button" value="Kart" onclick="javascript:map();"/>
 	<input type="button" value="Registrer band" onclick="javascript:band();"/>
-	<input type="button" value="Vis dine band" onclick="javascript:visBand();"/>
+	<input type="button" value="Alle band" onclick="javascript:visBand();"/>
 	<?php
 } else {
 	echo "Du er jo ikke logget inn!?!?!";
 }
-?>
+?> 
