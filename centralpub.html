@@ -18,11 +18,10 @@ require_once 'db.php';
 <script src="centralpub.js" type="text/javascript"></script>
 <title>Central Pub</title>
 <script type="text/javascript">
-/*$(document).ready (function() {
-	$('#nyBrukerDialog').dialog ({autoOpen:false, width: "500px"});
+$(document).ready (function() {
 	$('#endreBrukerdetaljer').dialog ({autoOpen:false, width: "500px"});
 });
-*/
+
 </script>
 </head>
 <body>
@@ -47,8 +46,8 @@ require_once 'db.php';
 <input type="button" value="Registrer ny bruker" onclick="javascript:nyBruker(this.form);"/>
 </form>
 </div>
+!-->
 
-<!-- Dialog for changing user details 
 <div id="endreBrukerdetaljerDialog" style="float:right;" title="Registrer ny bruker">
 <form onsubmit="return false;">
 <label for="uname">Bruker ID</label>       <input type="text" name="uname" title="Din e-post adresse"/><br/>
@@ -60,8 +59,6 @@ require_once 'db.php';
 <label for="email">Email</label>           <input type="text" name="email"/><br/>
 <input type="button" value="Oppdater brukerdata" onclick="javascript:endreBrukerdetaljer(this.form);"/>
 </form>
--->
-
 </div>
 
 

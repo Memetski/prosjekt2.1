@@ -11,4 +11,3 @@ if ($row=$sth->fetch())
 else
 	echo json_encode (array ('error'=>'Ikke logget på'));
 ?>
-	

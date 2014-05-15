@@ -71,7 +71,7 @@ function endreBrukerdetaljerDialog () {
 }
 
 function endreBrukerdetaljer (form) {
-/*	if (form.pwd.value.length>0&&form.opwd.value.length<6) {
+	if (form.pwd.value.length>0&&form.opwd.value.length<6) {
 		alert ("Du må oppgi det gamle passordet for å sette nytt passord");
 		form.opwd.focus();
 	} else if (form.pwd.value!=form.pwd1.value) {
@@ -80,7 +80,7 @@ function endreBrukerdetaljer (form) {
 	} else if (form.pwd.value.length>0&&form.pwd.value.length<6) {
 		alert ("Passord må være minst 6 karakterer langt");
 		form.pwd.focus();
-	}*/
+	}
 	$.ajax({
 		url: 'Endre_brukerdetaljer.php',
 		type: 'post',
@@ -95,7 +95,7 @@ function endreBrukerdetaljer (form) {
 
 function nyBruker (form) {
 
-/*
+
 	if (form.uname.value.length<6) {
 		alert ("Brukernavnet må være minst 6 karakterer langt");
 		form.uname.focus();
@@ -105,7 +105,7 @@ function nyBruker (form) {
 	} else if (form.pwd.value.length<6) {
 		alert ("Passordet må være minst 6 karakterer langt");
 		form.pwd.focus();
-	}*/
+	}
 	$.ajax({
 		url: 'opprettBruker.php',
 		type: 'post',
