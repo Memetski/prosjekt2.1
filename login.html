@@ -1,0 +1,13 @@
+﻿<?php
+session_start();
+?>
+
+<form onsubmit="return false;">
+Brukernavn<br/>
+<input type="text" title="Ditt brukernavn" name="uname"><br/>
+Passord<br/>
+<input type="password" name="pwd"><br/>
+<div style="display:none;color:red">Feil brukernavn/passord</div>
+<input type="button" value="Logg på" onclick="javascript:loggInn(this.form)"/>
+</form>
+<a href="javascript:nyBruker();">Registrer ny bruker</a>
