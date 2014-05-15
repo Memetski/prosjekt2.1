@@ -28,7 +28,7 @@
     $('#left').load ('login.html');
     }
     });
-    });
+    })
 
 
 
@@ -47,7 +47,7 @@ function loggInn(form) {
 			}
 		}
 	});
-};
+}
 
 function endreBrukerdetaljerDialog () {
 	$.ajax ({
@@ -119,7 +119,7 @@ function nyBruker (form) {
 					type: 'post',
 					data: {'uname': form.uname.value, 'pwd': form.pwd.value},
 					success: function (tmp) {
-						$('#left').load ('loginok.php');
+						$('#content').load ('loginok.php');
 					}
 				});
 				$('#nyBrukerDialog').dialog('close');
@@ -136,6 +136,7 @@ function nyBrukerDialog () {
 
 
 
+
 function loggut () {
 	$.ajax({
 		url: 'loggut.php',
@@ -143,14 +144,98 @@ function loggut () {
 			$('#left').load ('login.html');
 		}
 	});
-};
+}
 
 function map () {
 	$.ajax({
 		url: 'map.html',
 		success: function (tmp) {
-			$('#right').load ('map.html');
+			$('#content').load ('map.html');
 		}
 	});
-	$('#content').load ('map.html');
-};
+	
+	
+}
+
+
+function band () {
+	$.ajax({
+		url: 'band.php',
+		success: function (tmp) {
+			$('#content').load ('band.php');
+		}
+	});
+}
+
+function bandInsert (form) {
+	$.ajax({
+		url: 'opprettBand.php',
+		type: 'post',
+		data: { bname: form.bname.value, year: form.year.value, info: form.info.value},
+		success: function (tmp) {
+			data = eval ('('+tmp+')');
+			if (data.ok=="OK") {
+				$.ajax({
+					url: 'opprettBand.php',
+					type: 'post',
+					data: {'bname': form.bname.value, 'year': form.year.value, 'info': form.info.value},
+					success: function (tmp) {
+						$('#content').load ('band.php');
+					}
+				});
+				$('#nyttBand').dialog('close');
+			} else {
+				alert (data.message);
+			}
+		}
+	});
+}
+
+function bruker () {
+	$.ajax({
+		url: 'regbruk.php',
+		success: function (tmp) {
+			$('#content').load ('regbruk.php');
+		}
+	});
+}
+
+function brukerInsert (form) {
+	$.ajax({
+		url: 'opprettBruker.php',
+		type: 'post',
+		data: { uname: form.uname.value, pwd: form.pwd.value, fornavn: form.fornavn.value, etternavn: form.etternavn.value, email: form.email.value},
+		success: function (tmp) {
+			data = eval ('('+tmp+')');
+			if (data.ok=="OK") {
+				$.ajax({
+					url: 'opprettBruker.php',
+					type: 'post',
+					data: {'uname': form.uname.value, 'fornavn': form.fornavn.value, 'etternavn': form.etternavn.value, 'email': form.email.value, 'pwd': form.pwd.value},
+					success: function (tmp) {
+						$('#content').load ('regbruk.php');
+					}
+				});
+				$('#nyBruker').dialog('close');
+			} else {
+				alert (data.message);
+			}
+		}
+	});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
