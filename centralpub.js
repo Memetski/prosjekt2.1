@@ -224,11 +224,26 @@ function brukerInsert (form) {
 	});
 }
 
+/*
+function visBand () {
+	$.ajax({
+		url: 'visBand.php',
+		data: { id: uid},
+		type: 'GET',
+		success: function (tmp) {
+			data = eval ('('+tmp+')');
+			if (data.ok) {
+				$('#content').html (data.html);
+			} else
+				alert (data.message);
+		}
+	});
+}
+*/
 
-
-
-
-
+function visBand () {
+	$('#content').load ('visBand.php');
+}
 
 
 
